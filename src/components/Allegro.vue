@@ -1,5 +1,6 @@
 <template>
     <main>
+        
         <div class="title">
             <h1>Allegro</h1>
             <p class="SmallTitle">Best streaming service</p>
@@ -25,8 +26,6 @@
 </template>
 
 <script>
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -35,7 +34,6 @@ main{
     margin: 0 auto;
     color:rgb(54, 54, 54);
     position: relative;
-    font-family: Raleway;
 }
 .SmallTitle{
     font-weight: 300;
