@@ -4,10 +4,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap" rel="stylesheet">
     
       <Allegro />
-      <Slide noOverlay>
-        <a id="home" href="#">
-          <span>Home</span>
-        </a>
+      <Slide noOverlay width="200">
+        <div class="queue">
+          <li>
+            <ul>
+              <p class="song">Studeni</p>
+              <p class="artist">Flaneur</p>
+            </ul>
+            <ul>
+              <p class="song">Stvari</p>
+              <p class="artist">Flaneur</p>
+            </ul>
+            <ul>
+              <p class="song">Miksolidjski</p>
+              <p class="artist">Flaneur</p>
+            </ul>
+          </li>
+        </div>
       </Slide>
     
   </div>
@@ -50,5 +63,39 @@ body{
 .bm-item-list > * > span{
   color: rgb(233, 233, 233);
   font-weight: 300;
+}
+.song{
+  color: rgb(233, 233, 233);
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+  text-align: left;
+}
+.artist{
+  color: rgb(233, 233, 233, 0,5);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+  text-align: left;
+}
+li{
+  list-style: none;
+}
+ul{
+  padding: 0;
+  cursor: pointer;
+}
+ul::after{
+  display:block;
+  content: '';  
+  border-bottom: solid 1px rgb(233, 233, 233);  
+  transform: scaleX(1);  
+  transition: transform 400ms ease-in-out;
+}
+ul:hover{
+  opacity: 0.7;
+}
+ul:hover::after{
+  transform: scaleX(0);
 }
 </style>
