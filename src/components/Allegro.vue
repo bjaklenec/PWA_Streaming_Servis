@@ -7,7 +7,7 @@
         </div>
         <div class="Player">
             <div class="AlbumCover">
-                <img src="../assets/AlbumCover.jpeg" alt="" width="80%">
+                <img src="../assets/AlbumCover.jpeg" alt="Cover" width="80%">
             </div>
             <div class="info">
                 <p id="song">Kaktus</p>

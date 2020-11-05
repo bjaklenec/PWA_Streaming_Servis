@@ -6,20 +6,20 @@
       <Allegro />
       <Slide noOverlay width="200">
         <div class="queue">
-          <li>
-            <ul>
+          <ul>
+            <li>
               <p class="song">Studeni</p>
               <p class="artist">Flaneur</p>
-            </ul>
-            <ul>
+            </li>
+            <li>
               <p class="song">Stvari</p>
               <p class="artist">Flaneur</p>
-            </ul>
-            <ul>
-              <p class="song">Miksolidjski</p>
+            </li>
+            <li>
+              <p class="song">Miksolidijski</p>
               <p class="artist">Flaneur</p>
-            </ul>
-          </li>
+            </li>
+          </ul>
         </div>
       </Slide>
     
@@ -78,24 +78,26 @@ body{
   font-weight: 200;
   text-align: left;
 }
-li{
-  list-style: none;
-}
 ul{
+  list-style: none;
   padding: 0;
+  margin: 0;
+}
+li{
+  margin-top: 1rem;
   cursor: pointer;
 }
-ul::after{
+li::after{
   display:block;
   content: '';  
   border-bottom: solid 1px rgb(233, 233, 233);  
   transform: scaleX(1);  
   transition: transform 400ms ease-in-out;
 }
-ul:hover{
+li:hover{
   opacity: 0.7;
 }
-ul:hover::after{
+li:hover::after{
   transform: scaleX(0);
 }
 </style>
