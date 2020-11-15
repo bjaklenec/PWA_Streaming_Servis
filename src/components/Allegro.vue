@@ -145,5 +145,8 @@ img{
     .PlayerButtons{
         padding: 0px;
     }
+    .AlbumCover{
+        width: 70%;
+    }
 }
 </style>
