@@ -100,4 +100,9 @@ li:hover{
 li:hover::after{
   transform: scaleX(0);
 }
+@media screen and (max-width: 430px) {
+    #app{
+      width: 60%;
+    }
+}
 </style>

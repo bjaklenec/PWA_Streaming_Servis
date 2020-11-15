@@ -131,4 +131,19 @@ img{
         margin: 0 auto;
     }
 }
+@media screen and (max-width: 430px) {
+    .Player{
+        width: 100%;
+    }
+    .buttonPlay{
+        font-size: 3rem;
+        margin: 0 1rem;
+    }
+    .button{
+        font-size: 25px;
+    }
+    .PlayerButtons{
+        padding: 0px;
+    }
+}
 </style>
