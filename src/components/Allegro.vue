@@ -74,8 +74,7 @@ h1{
 }
 .AlbumCover{
     margin: 0 auto;
-    width: 70%;
-    height: 70%;
+    width: 80%;
 }
 img{
     width: 100%;
@@ -122,9 +121,6 @@ img{
     .buttonPlay{
         font-size: 3.5rem;
     }
-    .PlayerButtons{
-        padding-bottom: 30px;
-    }
     .AlbumCover{
         width: 80%;
         padding-top: 20px;
@@ -136,17 +132,26 @@ img{
         width: 100%;
     }
     .buttonPlay{
-        font-size: 3rem;
+        font-size: 3.5rem;
         margin: 0 1rem;
     }
     .button{
-        font-size: 25px;
+        font-size: 35px;
     }
     .PlayerButtons{
         padding: 0px;
     }
     .AlbumCover{
         width: 70%;
+    }
+}
+@media screen and (max-width: 340px) {
+    .Player{
+        width: 100%;
+    }
+    .buttonPlay{
+        font-size: 3.5rem;
+        margin: 0 7px;
     }
 }
 </style>
