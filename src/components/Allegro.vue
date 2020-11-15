@@ -94,4 +94,37 @@ img{
     font-size: 1rem;
     color: rgb(110, 110, 110);
 }
+.title{
+    text-align: center;
+}
+@media screen and (max-width: 1000px) {
+    .Player{
+        width: 60%
+    }
+    .AlbumCover{
+        width: 70%;
+    } 
+}
+@media screen and (max-width: 800px) {
+    .Player{
+        width: 80%
+    }
+    .AlbumCover{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 630px) {
+    .Player{
+        width: 90%
+    }
+    .buttonPlay{
+        font-size: 3.5rem;
+    }
+    .button{
+        padding: 0;
+    }
+    .AlbumCover{
+        width: 90%;
+    }
+}
 </style>
