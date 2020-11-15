@@ -102,29 +102,33 @@ img{
         width: 60%
     }
     .AlbumCover{
-        width: 70%;
+        width: 80%;
     } 
 }
 @media screen and (max-width: 800px) {
     .Player{
-        width: 80%
+        width: 80%;
+        padding: 0;
     }
     .AlbumCover{
         width: 80%;
+        padding-top: 20px;
     }
 }
 @media screen and (max-width: 630px) {
     .Player{
-        width: 90%
+        width: 100%;
     }
     .buttonPlay{
         font-size: 3.5rem;
     }
-    .button{
-        padding: 0;
+    .PlayerButtons{
+        padding-bottom: 30px;
     }
     .AlbumCover{
-        width: 90%;
+        width: 80%;
+        padding-top: 20px;
+        margin: 0 auto;
     }
 }
 </style>
