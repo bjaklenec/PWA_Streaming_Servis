@@ -1,51 +1,24 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap" rel="stylesheet">
-    
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Player</router-link> | 
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-    
-      <Allegro />
-      <Slide noOverlay width="200">
-        <div class="queue">
-          <ul>
-            <li>
-              <p class="song">Studeni</p>
-              <p class="artist">Flaneur</p>
-            </li>
-            <li>
-              <p class="song">Stvari</p>
-              <p class="artist">Flaneur</p>
-            </li>
-            <li>
-              <p class="song">Miksolidijski</p>
-              <p class="artist">Flaneur</p>
-            </li>
-          </ul>
-        </div>
-      </Slide>
-    
   </div>
 </template>
 
 <script>
-import Allegro from './components/Allegro.vue'
-import { Slide } from 'vue-burger-menu'
 
 export default {
-  name: 'App',
-  components: {
-    Allegro, 
-    Slide
-  }
+  name: 'App'
 }
 </script>
 
 <style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap');
+
 body{
   background-color: #f9803a8a;
 }
