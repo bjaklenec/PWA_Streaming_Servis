@@ -1,6 +1,5 @@
 <template>
     <main>
-        
         <div class="title">
             <h1>Allegro</h1>
             <p id="copr">© 2020, Borna Jaklenec. All rights reserved</p>
@@ -18,11 +17,8 @@
                 <a class="buttonPlay" title="Play/Pause song"><i class="zmdi zmdi-play-circle"></i></a>
                 <a class="button" title="Next song"><i class="zmdi zmdi-skip-next"></i></a>
             </div>
-
-        </div>
-        
-    </main>
-    
+        </div>       
+    </main>   
 </template>
 
 <script>

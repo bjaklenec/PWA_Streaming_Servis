@@ -1,6 +1,5 @@
 <template>
   <div class="sidebar">
-    <Player />
       <Slide noOverlay width="200">
         <div class="queue">
           <ul>
@@ -24,13 +23,11 @@
 </template>
 
 <script>
-import Player from '@/components/Player.vue'
 import { Slide } from 'vue-burger-menu'
 
 export default {
   name: 'Sidebar',
   components: {
-    Player, 
     Slide
   }
 }

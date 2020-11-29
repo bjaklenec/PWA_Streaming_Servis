@@ -4,18 +4,24 @@
       <router-link to="/">Player</router-link> | 
       <router-link to="/about">About</router-link>
     </div>
+    <Player />
     <router-view/>
   </div>
 </template>
 
 <script>
+import Player from '@/components/Player.vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Player
+  }
 }
 </script>
 
 <style>
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap');
 
