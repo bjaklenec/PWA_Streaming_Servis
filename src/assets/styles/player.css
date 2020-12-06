@@ -81,7 +81,7 @@ img{
     padding: 0 10px !important;
 }
 .k-progress-outer-line{
-    background: #f9803a8a;
+    background: #f9803a8a !important;
     height: 10px !important;
 }
 a.button, a.buttonPlayPause{
