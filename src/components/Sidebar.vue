@@ -31,8 +31,7 @@ export default {
       songs: [
         {
           title: 'Bornina',
-          artist: 'Flaneur',
-          src: require('@/assets/songs/Flaneur - Bornina.mp3')
+          artist: 'Flaneur'
         }
       ]
     }

@@ -1,15 +1,22 @@
-import { formatTimer } from "./timer";
+import { formatTime } from "./time";
 
 /**
  * @param {array}
  * @param {object}
 */
 
-const deleteElement = (array, target) => {
-  return array.filter(item => {
-    return item != target;
-  });
-};
+/**
+ * @param {array} array
+ */
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+}
 
 /**
  * @param {array} songs
@@ -19,24 +26,11 @@ const threatSongs = songs => {
   return songs.map(song => {
     song["isPlaying"] = false;
     song["percent"] = 0;
-    song["currentlyTimer"] = "00:00";
-    song["totalTimer"] = formatTimer(song.seconds);
+    song["currentTime"] = "00:00";
+    song["totalTime"] = formatTime(song.seconds);
 
     return song;
   });
 };
 
-/**
- * @param {array} array
- */
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-
-  return array;
-}
-
- export {deleteElement, threatSongs, shuffleArray};
+ export {threatSongs, shuffle};

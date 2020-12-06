@@ -2,7 +2,7 @@
  * @param {integer} seconds
  */
 
-const formatTimer = seconds => {
+const formatTime = seconds => {
   let minutes = parseInt(seconds / 60).toString();
   seconds = parseInt(seconds % 60).toString();
 
@@ -12,4 +12,4 @@ const formatTimer = seconds => {
   return output;
 };
 
-export { formatTimer };
+export { formatTime };

@@ -6,7 +6,7 @@
         </div>
         <div class="Player">
             <div class="AlbumCover">
-                <img v-bind:class="coverObject" :src="current.cover" alt="Cover" width="80%">
+                <img :src="current.cover" alt="Cover" width="80%">
             </div>
             <div class="info">
                 <p id="song">{{ current.title }}</p>
@@ -14,14 +14,13 @@
             </div>
             <KProgress
                 :show-text="false"
-                class="progress-bar-wrapper"
                 v-bind:percent="current.percent"
                 :color="['#f9803a8a']"
             />
             <div class="timer">
-                <p class="start">{{ currentlyTimer }}</p>
+                <p class="start">{{ currentTime }}</p>
                 <p class="end">
-                  {{ current.totalTimer }}
+                  {{ current.totalTime }}
                 </p>
             </div>
             <div class="PlayerButtons">
@@ -37,30 +36,31 @@
 
 <script>
 import songs from "@/assets/js/songs";
-import { formatTimer } from "@/assets/js/timer";
-import {threatSongs, shuffleArray} from "@/assets/js/functions";
+import { formatTime } from "@/assets/js/time";
+import {threatSongs, shuffle} from "@/assets/js/functions";
 import KProgress from 'k-progress'
 
 export default {
-  components: { KProgress },
+  components: {
+    KProgress 
+  },
   name: "Player",
   data() {
     return {
       current: {},
-      coverObject: { cover: true, animated: false },
       index: 0,
       isPlaying: false,
-      currentlyTimer: "00:00",
-      songs: shuffleArray(songs),
+      currentTime: "00:00",
+      songs: shuffle(songs),
       player: new Audio()
     };
   },
   methods: {
     listenersWhenPlay() {
       this.player.addEventListener("timeupdate", () => {
-        var playerTimer = this.player.currentTime;
-        this.currentlyTimer = formatTimer(playerTimer);
-        this.current.percent = (playerTimer * 100) / this.current.seconds;
+        var playerTime = this.player.currentTime;
+        this.currentTime = formatTime(playerTime);
+        this.current.percent = (playerTime * 100) / this.current.seconds;
         this.current.isPlaying = true;
       });
       this.player.addEventListener(
@@ -70,16 +70,9 @@ export default {
         }.bind(this)
       );
     },
-    setCover() {
-      this.coverObject.animated = true;
-      setTimeout(() => {
-        this.coverObject.animated = false;
-      }, 1000);
-    },
     setCurrentSong() {
       this.current = this.songs[this.index];
       this.play(this.current);
-      this.setCover();
     },
     play(song) {
       if (typeof song.src !== "undefined") {
@@ -90,7 +83,6 @@ export default {
       }
       this.player.play();
       this.isPlaying = true;
-      this.setCover();
       this.listenersWhenPlay();
     },
     pause() {
@@ -127,5 +119,4 @@ export default {
 <style>
 @import "../assets/styles/player.css";
 @import "../assets/styles/sidebar.css";
-
 </style>
