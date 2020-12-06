@@ -13,16 +13,16 @@
                 <p id="artist">{{ current.artist }}</p>
             </div>
             <KProgress
-              :show-text="false"
-              class="progress-bar-wrapper"
-              v-bind:percent="current.percent"
-              :color="['#f9803a8a']"
+                :show-text="false"
+                class="progress-bar-wrapper"
+                v-bind:percent="current.percent"
+                :color="['#f9803a8a']"
             />
             <div class="timer">
-              <p class="start">{{ currentlyTimer }}</p>
-              <p class="end">
-                {{ current.totalTimer }}
-              </p>
+                <p class="start">{{ currentlyTimer }}</p>
+                <p class="end">
+                  {{ current.totalTimer }}
+                </p>
             </div>
             <div class="PlayerButtons">
                 <a @click="prev" v-if="songs.length > 1" class="button" title="Previous Song"><i class="zmdi zmdi-skip-previous"></i></a>
