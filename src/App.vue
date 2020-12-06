@@ -2,7 +2,6 @@
   <div id="app">
     <Player />
     <Sidebar />
-
   </div>
 </template>
 
@@ -30,7 +29,7 @@ export default {
 }
 @media screen and (max-width: 530px){
   #app{
-    width: 50%;
+    width: 70%;
   }
 }
 </style>

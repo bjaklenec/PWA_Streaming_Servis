@@ -30,9 +30,9 @@ export default {
     return {
       songs: [
         {
-          title: 'Kaktus',
+          title: 'Bornina',
           artist: 'Flaneur',
-          src: require('@/assets/songs/Flaneur - Kaktus.wav')
+          src: require('@/assets/songs/Flaneur - Bornina.mp3')
         }
       ]
     }
