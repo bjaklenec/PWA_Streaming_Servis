@@ -3,18 +3,15 @@
       <Slide noOverlay width="200">
         <div class="queue">
           <ul>
-            <li>
-              <p class="song">{{ songs[0].title }}</p>
-              <p class="artist">{{ songs[0].artist }}</p>
-            </li>
-            <li>
-              <p class="song">Stvari</p>
-              <p class="artist">Flaneur</p>
-            </li>
-            <li>
-              <p class="song">Miksolidijski</p>
-              <p class="artist">Flaneur</p>
-            </li>
+            <!-- <li @click="play(song)" v-for="song in songs" :key="song.src">
+              <p class="song">{{ song.title }}</p>
+              <p class="artist">{{ song.artist }}</p>
+            </li> 
+            
+            Moram jos prouciti kako koristiti metode iz Player.vue komponente
+            pa cu dodati funkcionalnost da se sve pjesme ucitavaju i biraju od tud
+            
+            -->
           </ul>
         </div>
       </Slide>
@@ -22,18 +19,13 @@
 </template>
 
 <script>
-import { Slide } from 'vue-burger-menu'
+import { Slide } from 'vue-burger-menu';
+//import songs from "@/assets/js/songs"
 
 export default {
   name: 'Sidebar',
   data(){
     return {
-      songs: [
-        {
-          title: 'Bornina',
-          artist: 'Flaneur'
-        }
-      ]
     }
   },
   components: {
