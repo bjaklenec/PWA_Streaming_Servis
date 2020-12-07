@@ -1,70 +1,93 @@
 <template>
-    <main>
-        <div class="title">
-            <h1>Allegro</h1>
-            <p id="copr">© 2020, Borna Jaklenec. All rights reserved</p>
+  <div>
+   <div class="sidebar">
+      <Slide noOverlay width="200">
+        <div class="queue">
+          <ul>
+            <li @click="play(song)" v-for="song in songs" :key="song.src">
+              <p class="song" v-bind:class="{ playing: song.isPlaying}">{{ song.title }}</p>
+              <p class="artist" v-bind:class="{ playing: song.isPlaying}">{{ song.artist }}</p>
+            </li> 
+          </ul>
         </div>
-        <div class="Player">
-            <div class="AlbumCover">
-                <img :src="current.cover" alt="Cover" width="80%">
-            </div>
-            <div class="info">
-                <p id="song">{{ current.title }}</p>
-                <p id="artist">{{ current.artist }}</p>
-            </div>
-            <KProgress
-                :show-text="false"
-                v-bind:percent="current.percent"
-                :color="['#f9803a8a']"
-            />
-            <div class="timer">
-                <p class="start">{{ currentTime }}</p>
-                <p class="end">
-                  {{ current.totalTime }}
-                </p>
-            </div>
-            <div class="PlayerButtons">
-                <a @click="prev" v-if="songs.length > 1" class="button" title="Previous Song"><i class="zmdi zmdi-skip-previous"></i></a>
-                <a @click="play" v-if="!isPlaying" class="buttonPlayPause" title="Play song"><i class="zmdi zmdi-play-circle"></i></a>
-                <a @click="pause" v-else class="buttonPlayPause" title="Pause song"><i class="zmdi zmdi-pause-circle"></i></a>
-                <a @click="next" v-if="songs.length > 1" class="button" title="Next song"><i class="zmdi zmdi-skip-next"></i></a>
-            </div>     
+      </Slide>
+    </div>
+  
+    <main>
+
+      <div class='title'>
+        <h1>Allegro</h1>
+        <p id='copr'>© 2020, Borna Jaklenec. All rights reserved</p>
+      </div>
+
+      <div class='Player'>
+
+        <div class='AlbumCover'>
+          <img :src='current.cover' alt='Cover' width='80%'>
         </div>
 
-    </main>   
+        <div class='info'>
+          <p id='song'>{{ current.title }}</p>
+          <p id='artist'>{{ current.artist }}</p>
+        </div>
+
+        <KProgress
+          :show-text='false'
+          v-bind:percent='current.percent'
+          :color="['#f9803a8a']"
+        />
+
+        <div class='timer'>
+          <p class='start'>{{ currentTime }}</p>
+          <p class='end'>{{ current.totalTime }}</p>
+        </div>
+
+        <div class='PlayerButtons'>
+          <a @click='prev' v-if='songs.length > 1' class='button' title='Previous Song'><i class='zmdi zmdi-skip-previous'></i></a>
+          <a @click='play' v-if='!isPlaying' class='buttonPlayPause' title='Play song'><i class='zmdi zmdi-play-circle'></i></a>
+          <a @click='pause' v-else class='buttonPlayPause' title='Pause song'><i class='zmdi zmdi-pause-circle'></i></a>
+          <a @click='next' v-if='songs.length > 1' class='button' title='Next song'><i class='zmdi zmdi-skip-next'></i></a>
+        </div>
+
+      </div>  
+    </main>
+
+  </div> 
 </template>
 
 <script>
-import songs from "@/assets/js/songs";
-import { formatTime } from "@/assets/js/time";
-import {threatSongs, shuffle} from "@/assets/js/functions";
-import KProgress from 'k-progress'
+import { Slide } from 'vue-burger-menu';
+import KProgress from 'k-progress';
+import songs from '@/assets/js/songs';
+import { formatTime } from '@/assets/js/time';
+import { threatSongs, shuffle } from '@/assets/js/functions';
 
 export default {
   components: {
-    KProgress 
+    Slide,
+    KProgress    
   },
-  name: "Player",
+  name: 'Player',
   data() {
     return {
       current: {},
       index: 0,
       isPlaying: false,
-      currentTime: "00:00",
+      currentTime: '00:00',
       songs: shuffle(songs),
       player: new Audio()
     };
   },
   methods: {
     listenersWhenPlay() {
-      this.player.addEventListener("timeupdate", () => {
+      this.player.addEventListener('timeupdate', () => {
         var playerTime = this.player.currentTime;
         this.currentTime = formatTime(playerTime);
         this.current.percent = (playerTime * 100) / this.current.seconds;
         this.current.isPlaying = true;
       });
       this.player.addEventListener(
-        "ended",
+        'ended',
         function() {
           this.next();
         }.bind(this)
@@ -75,7 +98,7 @@ export default {
       this.play(this.current);
     },
     play(song) {
-      if (typeof song.src !== "undefined") {
+      if (typeof song.src !== 'undefined') {
         this.current.isPlaying = false;
         this.index = this.songs.indexOf(this.current);
         this.current = song;
@@ -117,6 +140,6 @@ export default {
 </script>
 
 <style>
-@import "../assets/styles/player.css";
-@import "../assets/styles/sidebar.css";
+@import '../assets/styles/player.css';
+@import '../assets/styles/sidebar.css';
 </style>

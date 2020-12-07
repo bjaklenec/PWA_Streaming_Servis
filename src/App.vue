@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <Player />
-    <Sidebar />
+    <!-- <Sidebar /> -->
   </div>
 </template>
 
 <script>
 import Player from '@/components/Player.vue'
-import Sidebar from '@/components/Sidebar.vue'
+//import Sidebar from '@/components/Sidebar.vue'
 
 export default {
   name: 'App',
   components: {
-    Player,
-    Sidebar
+    Player
   }
 }
 </script>
@@ -27,7 +26,7 @@ export default {
   width: 50%;
   margin: 0 auto;
 }
-@media screen and (max-width: 830px){
+@media screen and (max-width: 1000px){
   #app{
     width: 70%;
   }

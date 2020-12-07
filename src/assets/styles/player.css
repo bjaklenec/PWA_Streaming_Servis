@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&display=swap');
 
 body{
-  background-color: #f9803a8a;
+  background-color: #fcb58c;
 }
 main{
     margin: 0 auto;
@@ -81,7 +81,7 @@ img{
     padding: 0 10px !important;
 }
 .k-progress-outer-line{
-    background: #f9803a8a !important;
+    background: #fcb58c !important;
     height: 10px !important;
 }
 a.button, a.buttonPlayPause{

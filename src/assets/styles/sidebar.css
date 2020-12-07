@@ -25,6 +25,9 @@
   font-weight: 200;
   text-align: left;
 }
+.playing{
+  color: #fcb58c;
+}
 ul{
   list-style: none;
   padding: 0;
